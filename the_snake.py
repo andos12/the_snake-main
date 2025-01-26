@@ -1,4 +1,4 @@
-from random import choice, randint
+from random import randint
 
 import pygame
 
@@ -138,6 +138,7 @@ class Snake(GameObject):
         self.next_direction = None
         self.last = None
 
+
 # Функция обработки действий пользователя
 def handle_keys(game_object):
     """Обработка нажания клавиш"""
@@ -154,6 +155,7 @@ def handle_keys(game_object):
                 game_object.next_direction = LEFT
             elif event.key == pygame.K_RIGHT and game_object.direction != LEFT:
                 game_object.next_direction = RIGHT
+
 
 def main():
     """Основной цикл игры"""
@@ -176,6 +178,7 @@ def main():
             apple.randomize_position()
         if snake.get_head_position() in snake.positions[1:]:
             snake.reset()
+
 
 if __name__ == '__main__':
     main()
